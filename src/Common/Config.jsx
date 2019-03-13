@@ -1,0 +1,217 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+export const peopleColumnConfig = {
+  checkbox: {
+    title: '',
+    render: () => (
+      <input type="checkbox" />
+    ),
+  },
+  name: {
+    title: 'Name',
+    isSortable: true,
+    isSearchable: true,
+    render: person => (
+      <Link to={`/people/${person.name}`}>{person.name}</Link>
+    ),
+  },
+  mass: {
+    title: 'Mass',
+    isSortable: true,
+  },
+  hair_color: {
+    title: 'Hair Color',
+  },
+  birth_year: {
+    title: 'Born',
+    isSortable: true,
+  },
+  gender: {
+    title: 'Gender',
+  },
+  height: {
+    title: 'Height',
+  },
+  species: {
+    title: 'Species',
+  },
+  homeworld: {
+    title: 'Homeworld ',
+  },
+  skin_color: {
+    title: 'Skin Color',
+  },
+};
+
+export const filmsColumnConfig = {
+  checkbox: {
+    title: '',
+    render: () => (
+      <input type="checkbox" />
+    ),
+  },
+  title: {
+    title: 'Title',
+    isSortable: true,
+    isSearchable: true,
+    render: film => (
+      <Link to={`/films/${film.title}`}>{film.title}</Link>
+    ),
+  },
+  episode_id: {
+    title: 'Episode Id',
+    isSortable: true,
+  },
+  opening_crawl: {
+    title: 'Opening_crawl',
+    isSearchable: true,
+  },
+  director: {
+    title: 'Director',
+    isSortable: true,
+  },
+  producer: {
+    title: 'Producer',
+    isSortable: true,
+  },
+  release_date: {
+    title: 'Release Date',
+  },
+};
+
+export const planetsColumnConfig = {
+  checkbox: {
+    title: '',
+    render: () => (
+      <input type="checkbox" />
+    ),
+  },
+  name: {
+    title: 'Name',
+    isSortable: true,
+    isSearchable: true,
+    render: planet => (
+      <Link to={`/planets/${planet.name}`}>{planet.name}</Link>
+    ),
+  },
+  diameter: {
+    title: 'Diameter',
+    isSortable: true,
+  },
+  rotation_period: {
+    title: 'Rotation Period',
+    isSortable: true,
+  },
+  orbital_period: {
+    title: 'Orbital Period',
+    isSortable: true,
+  },
+  gravity: {
+    title: 'Gravity',
+    isSortable: true,
+  },
+  population: {
+    title: 'Population',
+    isSortable: true,
+  },
+  climate: {
+    title: 'Climate',
+    isSearchable: true,
+  },
+  surface_water: {
+    title: 'Surface Water',
+  },
+};
+
+export const speciesColumnConfig = {
+  checkbox: {
+    title: '',
+    render: () => (
+      <input type="checkbox" />
+    ),
+  },
+  name: {
+    title: 'Name',
+    isSortable: true,
+    isSearchable: true,
+    render: spacies => (
+      <Link to={`/spacies/${spacies.name}`}>{spacies.name}</Link>
+    ),
+  },
+  classification: {
+    title: 'Classification',
+    isSortable: true,
+  },
+  designation: {
+    title: 'Designation',
+    isSortable: true,
+  },
+  average_height: {
+    title: 'Average_height',
+    isSortable: true,
+  },
+  average_lifespan: {
+    title: 'Average Lifespan',
+    isSortable: true,
+  },
+  hair_colors: {
+    title: 'Hair Colors',
+    isSortable: true,
+    isSearchable: true,
+  },
+  skin_colors: {
+    title: 'Skin Colors',
+    isSortable: true,
+    isSearchable: true,
+  },
+  language: {
+    title: 'Language',
+    isSearchable: true,
+  },
+};
+
+export const starshipsColumnConfig = {
+  checkbox: {
+    title: '',
+    render: () => (
+      <input type="checkbox" />
+    ),
+  },
+  name: {
+    title: 'Name',
+    isSortable: true,
+    isSearchable: true,
+    render: starship => (
+      <Link to={`/starships/${starship.name}`}>{starship.name}</Link>
+    ),
+  },
+  model: {
+    title: 'Model',
+    isSearchable: true,
+  },
+  starship_class: {
+    title: 'Starship Class',
+    isSortable: true,
+  },
+  manufacturer: {
+    title: 'Manufacturer',
+    isSortable: true,
+  },
+  cost_in_credits: {
+    title: 'Cost in credits',
+    isSortable: true,
+  },
+  length: {
+    title: 'Length',
+    isSortable: true,
+  },
+  passengers: {
+    title: 'Passengers',
+    isSearchable: true,
+  },
+  max_atmosphering_speed: {
+    title: 'Max atmosphering speed',
+    isSearchable: true,
+  },
+};

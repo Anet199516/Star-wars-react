@@ -1,0 +1,50 @@
+body {
+    background-image: url(https://pixabay.com/get/e83db70728f2043ed1534705fb094797eb71ebd711b10c4090f5c37da0eeb2badf/astronomy-1868065_1920.jpg);  
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.title {
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    color: yellow;
+}
+
+.title-component {
+    color: yellow;
+    text-align: center;
+    font-size: 32px;
+}
+
+
+.NavLink-items {
+    font-size: 24px;
+}
+
+thead:hover {
+    cursor: pointer;
+}
+
+/* table {
+    margin-top: 10px;
+    color: black;
+    border: solid black 2px;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 5px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+td:nth-child(n+2):nth-last-child(n+4),
+td:last-child {
+ text-align: center;
+} */
