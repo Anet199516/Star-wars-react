@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const peopleColumnConfig = {
+export const charactersColumnConfig = {
   checkbox: {
     title: '',
     render: () => (
@@ -191,6 +191,51 @@ export const starshipsColumnConfig = {
     isSearchable: true,
   },
   starship_class: {
+    title: 'Starship Class',
+    isSortable: true,
+  },
+  manufacturer: {
+    title: 'Manufacturer',
+    isSortable: true,
+  },
+  cost_in_credits: {
+    title: 'Cost in credits',
+    isSortable: true,
+  },
+  length: {
+    title: 'Length',
+    isSortable: true,
+  },
+  passengers: {
+    title: 'Passengers',
+    isSearchable: true,
+  },
+  max_atmosphering_speed: {
+    title: 'Max atmosphering speed',
+    isSearchable: true,
+  },
+};
+
+export const vehiclesColumnConfig = {
+  checkbox: {
+    title: '',
+    render: () => (
+      <input type="checkbox" />
+    ),
+  },
+  name: {
+    title: 'Name',
+    isSortable: true,
+    isSearchable: true,
+    render: vehicle => (
+      <Link to={`/vehicles/${vehicle.name}`}>{vehicle.name}</Link>
+    ),
+  },
+  model: {
+    title: 'Model',
+    isSearchable: true,
+  },
+  vehicle_class: {
     title: 'Starship Class',
     isSortable: true,
   },

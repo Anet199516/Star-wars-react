@@ -30,7 +30,7 @@ class Species extends React.Component {
     const { species, isLoaded, count, page, config } = this.state;
     return (
       <div>
-        <h1 className="title-component">Species Page</h1>
+        <h1 className="title-component">Species</h1>
         { isLoaded ? (
           <>
             <Pagination count={count} page={page} />

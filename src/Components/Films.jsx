@@ -27,7 +27,7 @@ class Films extends React.Component {
     const { films, isLoaded, config } = this.state;
     return (
       <div>
-        <h1 className="title-component">Films Page</h1>
+        <h1 className="title-component">Films</h1>
         { isLoaded ? (
           <DataTable
             className="data-table"

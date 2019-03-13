@@ -28,7 +28,7 @@ const Pagination = ({
           key={page}
           to={{
             pathname: location.pathname,
-            search: location.search,
+            search: getSearchWithPage(page),
           }}
         >
           {page}

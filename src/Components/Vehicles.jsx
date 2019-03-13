@@ -1,42 +1,42 @@
 import React from 'react';
-import { getAllStarships } from '../service/AllComponents';
+import { getAllVehicles } from '../service/AllComponents';
 import Pagination from '../Common/Pagination';
-import { starshipsColumnConfig } from '../Common/Config';
+import { vehiclesColumnConfig } from '../Common/Config';
 import DataTable from '../Common/DataTable';
 
-class Starships extends React.Component {
+class Vehicles extends React.Component {
   constructor() {
     super();
     this.state = {
       isLoaded: false,
-      starships: [],
+      vehicles: [],
       page: 1,
       count: 0,
-      config: starshipsColumnConfig,
+      config: vehiclesColumnConfig,
     };
   }
 
   async componentDidMount() {
-    const { count, results: starships } = await getAllStarships();
+    const { count, results: vehicles } = await getAllVehicles();
 
     this.setState({
-      starships,
+      vehicles,
       count,
       isLoaded: true,
     });
   }
 
   render() {
-    const { starships, isLoaded, count, page, config } = this.state;
+    const { vehicles, isLoaded, count, page, config } = this.state;
     return (
       <div>
-        <h1 className="title-component">Starships</h1>
+        <h1 className="title-component">Vehicles</h1>
         { isLoaded ? (
           <>
             <Pagination count={count} page={page} />
             <DataTable
               className="data-table"
-              items={starships}
+              items={vehicles}
               config={config}
             />
           </>
@@ -46,4 +46,4 @@ class Starships extends React.Component {
   }
 }
 
-export default Starships;
+export default Vehicles;

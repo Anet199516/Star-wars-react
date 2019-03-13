@@ -4,7 +4,7 @@ export const getAllFilms = () => {
   return getComponents('/films/');
 };
 
-export const getAllPeople = () => {
+export const getAllCharacters = () => {
   return getComponents('/people/');
 };
 
@@ -18,6 +18,10 @@ export const getAllSpecies = () => {
 
 export const getAllStarships = () => {
   return getComponents('/starships/');
+};
+
+export const getAllVehicles = () => {
+  return getComponents('/vehicles/');
 };
 
 // export const getById = (personId) => {

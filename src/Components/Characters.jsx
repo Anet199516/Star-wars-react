@@ -1,42 +1,42 @@
 import React from 'react';
-import { getAllPeople } from '../service/AllComponents';
+import { getAllCharacters } from '../service/AllComponents';
 import Pagination from '../Common/Pagination';
-import { peopleColumnConfig } from '../Common/Config';
+import { charactersColumnConfig } from '../Common/Config';
 import DataTable from '../Common/DataTable';
 
-class People extends React.Component {
+class Characters extends React.Component {
   constructor() {
     super();
     this.state = {
       isLoaded: false,
-      people: [],
+      characters: [],
       page: 1,
       count: 0,
-      config: peopleColumnConfig,
+      config: charactersColumnConfig,
     };
   }
 
   async componentDidMount() {
-    const { count, results: people } = await getAllPeople();
+    const { count, results: characters } = await getAllCharacters();
 
     this.setState({
-      people,
+      characters,
       count,
       isLoaded: true,
     });
   }
 
   render() {
-    const { people, isLoaded, count, page, config } = this.state;
+    const { characters, isLoaded, count, page, config } = this.state;
     return (
       <div>
-        <h1 className="title-component">People Page</h1>
+        <h1 className="title-component">Characters</h1>
         { isLoaded ? (
           <>
             <Pagination count={count} page={page} />
             <DataTable
               className="data-table"
-              items={people}
+              items={characters}
               config={config}
             />
           </>
@@ -46,4 +46,4 @@ class People extends React.Component {
   }
 }
 
-export default People;
+export default Characters;

@@ -30,7 +30,7 @@ class Planets extends React.Component {
     const { planets, isLoaded, count, page, config } = this.state;
     return (
       <div>
-        <h1 className="title-component">Planets Page</h1>
+        <h1 className="title-component">Planets</h1>
         { isLoaded ? (
           <>
             <Pagination count={count} page={page} />
