@@ -10,15 +10,19 @@ import Starships from './Components/Starships';
 
 const App = () => (
   <div className="App">
-    <h1 className="title">Star Wars</h1>
-    <ul className="NavLink">
-      <li><NavLink className="NavLink-items" to="/">Home</NavLink></li>
-      <li><NavLink className="NavLink-items" to="/people">People</NavLink></li>
-      <li><NavLink className="NavLink-items" to="/films">Films</NavLink></li>
-      <li><NavLink className="NavLink-items" to="/planets">Planets</NavLink></li>
-      <li><NavLink className="NavLink-items" to="/species">Species</NavLink></li>
-      <li><NavLink className="NavLink-items" to="/starships">Starships</NavLink></li>
-    </ul>
+    <header>
+      <h1 className="title">Star Wars</h1>
+    </header>
+    <nav className="NavLink">
+      <ul>
+        <li><NavLink className="NavLink-items" to="/">Home</NavLink></li>
+        <li><NavLink className="NavLink-items" to="/people">People</NavLink></li>
+        <li><NavLink className="NavLink-items" to="/films">Films</NavLink></li>
+        <li><NavLink className="NavLink-items" to="/planets">Planets</NavLink></li>
+        <li><NavLink className="NavLink-items" to="/species">Species</NavLink></li>
+        <li><NavLink className="NavLink-items" to="/starships">Starships</NavLink></li>
+      </ul>
+    </nav>
     <section>
       <Switch>
         <Route exact path="/" component={HomePage} />

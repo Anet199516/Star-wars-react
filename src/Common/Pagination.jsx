@@ -11,10 +11,20 @@ const Pagination = ({
   for (let index = 0; index < pageCount; index++) {
     pages.push(index + 1);
   }
+
+  const getSearchWithPage = (page) => {
+    const urlParams = new URLSearchParams(location.search);
+
+    urlParams.set('page', page);
+
+    return urlParams.toString();
+  };
+
   return (
-    <div className="Pagination">
+    <ul className="pagination">
       {pages.map(page => (
         <Link
+          className="page-item"
           key={page}
           to={{
             pathname: location.pathname,
@@ -24,7 +34,7 @@ const Pagination = ({
           {page}
         </Link>
       ))}
-    </div>
+    </ul>
   );
 };
 

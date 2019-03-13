@@ -1,39 +1,65 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 export const peopleColumnConfig = {
+  checkbox: {
+    title: '',
+    render: () => (
+      <input type="checkbox" />
+    ),
+  },
   name: {
     title: 'Name',
     isSortable: true,
     isSearchable: true,
-    link: '/person/:name',
+    render: person => (
+      <Link to={`/people/${person.name}`}>{person.name}</Link>
+    ),
   },
   mass: {
     title: 'Mass',
     isSortable: true,
   },
-  hairColor: {
-    title: 'Hair_Color',
+  hair_color: {
+    title: 'Hair Color',
   },
-  born: {
+  birth_year: {
     title: 'Born',
     isSortable: true,
   },
   gender: {
     title: 'Gender',
   },
-  films: {
-    title: 'Films',
+  height: {
+    title: 'Height',
   },
   species: {
     title: 'Species',
   },
+  homeworld: {
+    title: 'Homeworld ',
+  },
+  skin_color: {
+    title: 'Skin Color',
+  },
 };
 
 export const filmsColumnConfig = {
-  name: {
+  checkbox: {
+    title: '',
+    render: () => (
+      <input type="checkbox" />
+    ),
+  },
+  title: {
     title: 'Title',
     isSortable: true,
     isSearchable: true,
+    render: film => (
+      <Link to={`/films/${film.title}`}>{film.title}</Link>
+    ),
   },
-  episode: {
+  episode_id: {
     title: 'Episode Id',
     isSortable: true,
   },
@@ -55,10 +81,19 @@ export const filmsColumnConfig = {
 };
 
 export const planetsColumnConfig = {
+  checkbox: {
+    title: '',
+    render: () => (
+      <input type="checkbox" />
+    ),
+  },
   name: {
     title: 'Name',
     isSortable: true,
     isSearchable: true,
+    render: planet => (
+      <Link to={`/planets/${planet.name}`}>{planet.name}</Link>
+    ),
   },
   diameter: {
     title: 'Diameter',
@@ -90,10 +125,19 @@ export const planetsColumnConfig = {
 };
 
 export const speciesColumnConfig = {
+  checkbox: {
+    title: '',
+    render: () => (
+      <input type="checkbox" />
+    ),
+  },
   name: {
     title: 'Name',
     isSortable: true,
     isSearchable: true,
+    render: spacies => (
+      <Link to={`/spacies/${spacies.name}`}>{spacies.name}</Link>
+    ),
   },
   classification: {
     title: 'Classification',
@@ -128,10 +172,19 @@ export const speciesColumnConfig = {
 };
 
 export const starshipsColumnConfig = {
+  checkbox: {
+    title: '',
+    render: () => (
+      <input type="checkbox" />
+    ),
+  },
   name: {
     title: 'Name',
     isSortable: true,
     isSearchable: true,
+    render: starship => (
+      <Link to={`/starships/${starship.name}`}>{starship.name}</Link>
+    ),
   },
   model: {
     title: 'Model',
