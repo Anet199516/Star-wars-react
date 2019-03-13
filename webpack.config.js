@@ -27,7 +27,7 @@ module.exports = {
       { from: 'src/style.css' },
     ]),
     new webpack.DefinePlugin({
-      'process.env.PUBLIC_URL': JSON.stringify('https://anet199516.github.io/star-wars-react')
+      'process.env.PUBLIC_URL': JSON.stringify('https://anet199516.github.io/star-wars-react/dist')
     }),
   ],
 
