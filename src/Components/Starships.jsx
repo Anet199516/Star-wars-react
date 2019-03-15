@@ -1,5 +1,5 @@
 import React from 'react';
-import { getAllStarships } from '../service/AllComponents';
+import { getAllComponents } from '../service/dataFromServer';
 import Pagination from '../Common/Pagination';
 import { starshipsColumnConfig } from '../Common/Config';
 import DataTable from '../Common/DataTable';
@@ -17,7 +17,7 @@ class Starships extends React.Component {
   }
 
   async componentDidMount() {
-    const { count, results: starships } = await getAllStarships();
+    const { count, results: starships } = await getAllComponents(/starships/);
 
     this.setState({
       starships,

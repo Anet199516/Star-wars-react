@@ -1,5 +1,5 @@
 import React from 'react';
-import { getAllVehicles } from '../service/AllComponents';
+import { getAllComponents } from '../service/dataFromServer';
 import Pagination from '../Common/Pagination';
 import { vehiclesColumnConfig } from '../Common/Config';
 import DataTable from '../Common/DataTable';
@@ -17,7 +17,7 @@ class Vehicles extends React.Component {
   }
 
   async componentDidMount() {
-    const { count, results: vehicles } = await getAllVehicles();
+    const { count, results: vehicles } = await getAllComponents(/vehicles/);
 
     this.setState({
       vehicles,

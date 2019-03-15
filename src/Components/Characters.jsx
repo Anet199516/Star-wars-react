@@ -1,5 +1,5 @@
 import React from 'react';
-import { getAllCharacters } from '../service/AllComponents';
+import { getAllComponents } from '../service/dataFromServer';
 import Pagination from '../Common/Pagination';
 import { charactersColumnConfig } from '../Common/Config';
 import DataTable from '../Common/DataTable';
@@ -17,7 +17,7 @@ class Characters extends React.Component {
   }
 
   async componentDidMount() {
-    const { count, results: characters } = await getAllCharacters();
+    const { count, results: characters } = await getAllComponents(/people/);
 
     this.setState({
       characters,

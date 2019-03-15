@@ -1,10 +1,11 @@
-body {
-    background-image: url(https://pixabay.com/get/e83db70728f2043ed1534705fb094797eb71ebd711b10c4090f5c37da0eeb2badf/astronomy-1868065_1920.jpg);  
-    background-size: cover;
+#root {
+    background-color: black;
+    background: url(http://www.script-tutorials.com/demos/360/images/stars.png) top center #000;
+    /* background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
-    margin: 0px;
-    padding: 0px;
+    background-position: center;  */
+    /* margin: 0px; */
+    /* padding: 0px; */
     box-sizing: border-box;
 }
 

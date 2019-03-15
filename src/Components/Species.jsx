@@ -1,5 +1,5 @@
 import React from 'react';
-import { getAllSpecies } from '../service/AllComponents';
+import { getAllComponents } from '../service/dataFromServer';
 import Pagination from '../Common/Pagination';
 import { speciesColumnConfig } from '../Common/Config';
 import DataTable from '../Common/DataTable';
@@ -17,7 +17,7 @@ class Species extends React.Component {
   }
 
   async componentDidMount() {
-    const { count, results: species } = await getAllSpecies();
+    const { count, results: species } = await getAllComponents(/species/);
 
     this.setState({
       species,
