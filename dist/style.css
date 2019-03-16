@@ -50,4 +50,19 @@ footer {
     width: 80px;    
 }
 
+.title-details {
+    color: yellow;
+    text-align: center;
+    font-size: 32px;
+}
+
+.details-container {
+    color: white;
+}
+
+.sortable-column::after {
+    content: "\21D3""\21D1";
+    color: yellowgreen;
+}
+
 

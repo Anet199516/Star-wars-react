@@ -13,7 +13,7 @@ export const charactersColumnConfig = {
     isSortable: true,
     isSearchable: true,
     render: person => (
-      <Link to={`/people/${person.name}`}>{person.name}</Link>
+      <Link to={`/people/${person.id}`}>{person.name}</Link>
     ),
   },
   mass: {
@@ -56,7 +56,7 @@ export const filmsColumnConfig = {
     isSortable: true,
     isSearchable: true,
     render: film => (
-      <Link to={`/films/${film.title}`}>{film.title}</Link>
+      <Link to={`/films/${film.id}`}>{film.title}</Link>
     ),
   },
   episode_id: {
@@ -92,7 +92,7 @@ export const planetsColumnConfig = {
     isSortable: true,
     isSearchable: true,
     render: planet => (
-      <Link to={`/planets/${planet.name}`}>{planet.name}</Link>
+      <Link to={`/planets/${planet.id}`}>{planet.name}</Link>
     ),
   },
   diameter: {
@@ -136,7 +136,7 @@ export const speciesColumnConfig = {
     isSortable: true,
     isSearchable: true,
     render: spacies => (
-      <Link to={`/spacies/${spacies.name}`}>{spacies.name}</Link>
+      <Link to={`/spacies/${spacies.id}`}>{spacies.name}</Link>
     ),
   },
   classification: {
@@ -183,7 +183,7 @@ export const starshipsColumnConfig = {
     isSortable: true,
     isSearchable: true,
     render: starship => (
-      <Link to={`/starships/${starship.name}`}>{starship.name}</Link>
+      <Link to={`/starships/${starship.id}`}>{starship.name}</Link>
     ),
   },
   model: {
@@ -228,7 +228,7 @@ export const vehiclesColumnConfig = {
     isSortable: true,
     isSearchable: true,
     render: vehicle => (
-      <Link to={`/vehicles/${vehicle.name}`}>{vehicle.name}</Link>
+      <Link to={`/vehicles/${vehicle.id}`}>{vehicle.name}</Link>
     ),
   },
   model: {

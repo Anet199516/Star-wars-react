@@ -11,7 +11,7 @@ class Characters extends React.Component {
       isLoaded: false,
       characters: [],
       page: 1,
-      count: 0,
+      count: 87,
       config: charactersColumnConfig,
     };
   }
