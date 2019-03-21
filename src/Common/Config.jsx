@@ -8,6 +8,12 @@ export const charactersColumnConfig = {
       <input type="checkbox" />
     ),
   },
+  image: {
+    title: 'Picture',
+    render: person => (
+      <img className="image" src={`https://starwars-visualguide.com/assets/img/characters/${person.id}.jpg`} />
+    ),
+  },
   name: {
     title: 'Name',
     isSortable: true,
@@ -51,6 +57,12 @@ export const filmsColumnConfig = {
       <input type="checkbox" />
     ),
   },
+  image: {
+    title: 'Picture',
+    render: film => (
+      <img className="image" src={`https://starwars-visualguide.com/assets/img/films/${film.id}.jpg`} />
+    ),
+  },
   title: {
     title: 'Title',
     isSortable: true,
@@ -85,6 +97,12 @@ export const planetsColumnConfig = {
     title: '',
     render: () => (
       <input type="checkbox" />
+    ),
+  },
+  image: {
+    title: 'Picture',
+    render: planet => (
+      <img className="image" src={`https://starwars-visualguide.com/assets/img/planets/${planet.id}.jpg`} />
     ),
   },
   name: {
@@ -131,12 +149,18 @@ export const speciesColumnConfig = {
       <input type="checkbox" />
     ),
   },
+  image: {
+    title: 'Picture',
+    render: species => (
+      <img className="image" src={`https://starwars-visualguide.com/assets/img/species/${species.id}.jpg`} />
+    ),
+  },
   name: {
     title: 'Name',
     isSortable: true,
     isSearchable: true,
     render: spacies => (
-      <Link to={`/spacies/${spacies.id}`}>{spacies.name}</Link>
+      <Link to={`/species/${spacies.id}`}>{spacies.name}</Link>
     ),
   },
   classification: {
@@ -176,6 +200,12 @@ export const starshipsColumnConfig = {
     title: '',
     render: () => (
       <input type="checkbox" />
+    ),
+  },
+  image: {
+    title: 'Picture',
+    render: starship => (
+      <img className="image" src={`https://starwars-visualguide.com/assets/img/starships/${starship.id}.jpg`} />
     ),
   },
   name: {
@@ -221,6 +251,12 @@ export const vehiclesColumnConfig = {
     title: '',
     render: () => (
       <input type="checkbox" />
+    ),
+  },
+  image: {
+    title: 'Picture',
+    render: vehicle => (
+      <img className="image" src={`https://starwars-visualguide.com/assets/img/vehicles/${vehicle.id}.jpg`} />
     ),
   },
   name: {

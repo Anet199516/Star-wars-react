@@ -60,8 +60,9 @@ footer {
     color: yellowgreen;
 }
 
-.button-pagination:hover {
-    background-color: coral;
+.image {
+    width: 130px;
+    height: 150px;
 }
 
 

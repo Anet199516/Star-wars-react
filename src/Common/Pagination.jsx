@@ -23,8 +23,9 @@ const Pagination = ({
   return (
     <ul className="pagination">
       {pages.map(page => (
-        <button className="button-pagination" key={page} type="button">
+        <li className="page-item" key={page}>
           <Link
+            className="page-link"
             to={{
               pathname: location.pathname,
               search: getSearchWithPage(page),
@@ -32,7 +33,7 @@ const Pagination = ({
           >
             {page}
           </Link>
-        </button>
+        </li>
       ))}
     </ul>
   );
