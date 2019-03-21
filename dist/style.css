@@ -1,11 +1,6 @@
 #root {
     background-color: black;
     background: url(http://www.script-tutorials.com/demos/360/images/stars.png) top center #000;
-    /* background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;  */
-    /* margin: 0px; */
-    /* padding: 0px; */
     box-sizing: border-box;
 }
 
@@ -63,6 +58,10 @@ footer {
 .sortable-column::after {
     content: "\21D3""\21D1";
     color: yellowgreen;
+}
+
+.button-pagination:hover {
+    background-color: coral;
 }
 
 

@@ -10,14 +10,37 @@ class Starships extends React.Component {
     this.state = {
       isLoaded: false,
       starships: [],
-      page: 1,
+      page: 0,
       count: 0,
       config: starshipsColumnConfig,
     };
   }
 
-  async componentDidMount() {
-    const { count, results: starships } = await getAllComponents(/starships/);
+  componentDidMount() {
+    this.updatePageFromURL();
+  }
+
+  componentDidUpdate() {
+    this.updatePageFromURL();
+  }
+
+  updatePageFromURL() {
+    const { location } = this.props;
+    const urlParams = new URLSearchParams(location.search);
+    const page = +urlParams.get('page') || 1;
+
+    if (page === this.state.page) return;
+
+    this.setState({ page }, this.loadPeople);
+  }
+
+  async loadPeople() {
+    const { page } = this.state;
+    const urlParams = new URLSearchParams();
+
+    urlParams.set('page', page);
+
+    const { count, results: starships } = await getAllComponents(`/starships?${urlParams.toString()}`);
 
     this.setState({
       starships,

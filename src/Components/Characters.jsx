@@ -10,14 +10,37 @@ class Characters extends React.Component {
     this.state = {
       isLoaded: false,
       characters: [],
-      page: 1,
-      count: 87,
+      page: 0,
+      count: 0,
       config: charactersColumnConfig,
     };
   }
 
-  async componentDidMount() {
-    const { count, results: characters } = await getAllComponents(/people/);
+  componentDidMount() {
+    this.updatePageFromURL();
+  }
+
+  componentDidUpdate() {
+    this.updatePageFromURL();
+  }
+
+  updatePageFromURL() {
+    const { location } = this.props;
+    const urlParams = new URLSearchParams(location.search);
+    const page = +urlParams.get('page') || 1;
+
+    if (page === this.state.page) return;
+
+    this.setState({ page }, this.loadPeople);
+  }
+
+  async loadPeople() {
+    const { page } = this.state;
+    const urlParams = new URLSearchParams();
+
+    urlParams.set('page', page);
+
+    const { count, results: characters } = await getAllComponents(`/people?${urlParams.toString()}`);
 
     this.setState({
       characters,

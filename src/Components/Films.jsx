@@ -1,6 +1,5 @@
 import React from 'react';
 import { getAllComponents } from '../service/dataFromServer';
-import Pagination from '../Common/Pagination';
 import { filmsColumnConfig } from '../Common/Config';
 import DataTable from '../Common/DataTable';
 
