@@ -14,10 +14,10 @@ const App = () => (
   <div className="App">
     <header>
       <h1 className="title">Star Wars</h1>
+      <NavLink className="NavLink-items-home" to="/">Home</NavLink>
     </header>
     <nav className="NavLink">
       <ul>
-        <li><NavLink className="NavLink-items" to="/">Home</NavLink></li>
         <li><NavLink className="NavLink-items" to="/people">Characters</NavLink></li>
         <li><NavLink className="NavLink-items" to="/films">Films</NavLink></li>
         <li><NavLink className="NavLink-items" to="/planets">Planets</NavLink></li>
