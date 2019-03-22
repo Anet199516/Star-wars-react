@@ -11,7 +11,7 @@ export const charactersColumnConfig = {
   image: {
     title: 'Picture',
     render: person => (
-      <img className="image" src={`https://starwars-visualguide.com/assets/img/characters/${person.id}.jpg`} />
+      <img className="image" src={`https://starwars-visualguide.com/assets/img/characters/${person.id}.jpg`} alt="Not found" />
     ),
   },
   name: {
@@ -60,7 +60,7 @@ export const filmsColumnConfig = {
   image: {
     title: 'Picture',
     render: film => (
-      <img className="image" src={`https://starwars-visualguide.com/assets/img/films/${film.id}.jpg`} />
+      <img className="image" src={`https://starwars-visualguide.com/assets/img/films/${film.id}.jpg`} alt="Not found" />
     ),
   },
   title: {
@@ -102,7 +102,7 @@ export const planetsColumnConfig = {
   image: {
     title: 'Picture',
     render: planet => (
-      <img className="image" src={`https://starwars-visualguide.com/assets/img/planets/${planet.id}.jpg`} />
+      <img className="image" src={`https://starwars-visualguide.com/assets/img/planets/${planet.id}.jpg`} alt="Not found" />
     ),
   },
   name: {
@@ -152,7 +152,7 @@ export const speciesColumnConfig = {
   image: {
     title: 'Picture',
     render: species => (
-      <img className="image" src={`https://starwars-visualguide.com/assets/img/species/${species.id}.jpg`} />
+      <img className="image" src={`https://starwars-visualguide.com/assets/img/species/${species.id}.jpg`} alt="Not found" />
     ),
   },
   name: {
@@ -205,7 +205,7 @@ export const starshipsColumnConfig = {
   image: {
     title: 'Picture',
     render: starship => (
-      <img className="image" src={`https://starwars-visualguide.com/assets/img/starships/${starship.id}.jpg`} />
+      <img className="image" src={`https://starwars-visualguide.com/assets/img/starships/${starship.id}.jpg`} alt="Not found" />
     ),
   },
   name: {
@@ -256,7 +256,7 @@ export const vehiclesColumnConfig = {
   image: {
     title: 'Picture',
     render: vehicle => (
-      <img className="image" src={`https://starwars-visualguide.com/assets/img/vehicles/${vehicle.id}.jpg`} />
+      <img className="image" src={`https://starwars-visualguide.com/assets/img/vehicles/${vehicle.id}.jpg`} alt="Not found" />
     ),
   },
   name: {
