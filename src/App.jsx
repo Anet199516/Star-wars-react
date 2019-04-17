@@ -13,11 +13,11 @@ import Details from './Details/Details';
 const App = () => (
   <div className="App">
     <header>
-      <h1 className="title">Star Wars</h1>
-      <NavLink className="NavLink-items-home" to="/">Home</NavLink>
+      <NavLink className="title" to="/">Star Wars</NavLink>
     </header>
     <nav className="NavLink">
       <ul>
+        <li><NavLink className="NavLink-items-home" to="/">Home</NavLink></li>
         <li><NavLink className="NavLink-items" to="/people">Characters</NavLink></li>
         <li><NavLink className="NavLink-items" to="/films">Films</NavLink></li>
         <li><NavLink className="NavLink-items" to="/planets">Planets</NavLink></li>
@@ -44,7 +44,7 @@ const App = () => (
         <Route render={() => <div>Page not found</div>} />
       </Switch>
     </section>
-    <footer>Footer</footer>
+    <footer />
   </div>
 );
 

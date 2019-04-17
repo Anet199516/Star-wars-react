@@ -4,8 +4,16 @@
     box-sizing: border-box;
 }
 
-.title {
+html {
+    background-size: 100%;
+}
+
+
+header {
     text-align: center;
+}
+
+.title {
     font-family: 'Roboto Slab', serif;
     font-family: 'Playfair Display', serif;
     font-size: 52px;
@@ -19,7 +27,7 @@
 }
 
 
-.NavLink-items {
+/* .NavLink-items {
     font-size: 24px;
 }
 
@@ -28,7 +36,7 @@
     text-decoration-line: underline;
     font-size: 24px;
     
-}
+} */
 
 .NavLink {
     display: none;
@@ -38,25 +46,35 @@ thead:hover {
     cursor: pointer;
 }
 
-.home_page-category {
-    display: inline-block;
-    margin-left: 10px;
-    margin-top: 35px;
+.home_page-container {
+    margin-top: 25px;
+    display: grid;
+    grid-template-areas:
+    "first second third"
+    "fourth fifth sixth";
 }
 
-.home_page-container {
-    margin-left: 70px;
-    margin-right: auto;
+.home_page-category {
+    margin-bottom: 30px;
 }
+
+.home_page-container img {
+    border-radius: 10px;
+    -webkit-box-shadow: 10px 13px 33px 2px rgba(71,62,71,1);
+    -moz-box-shadow: 10px 13px 33px 2px rgba(71,62,71,1);
+    box-shadow: 10px 13px 33px 2px rgba(71,62,71,1);
+}
+
+.home_page-container img:hover {
+    opacity: 0.7;
+}
+
 
 .title-image {
     color: yellow;
     text-align: center;
 }
 
-footer {
-    width: 40px;    
-}
 
 .title-details {
     color: yellow;
@@ -76,6 +94,10 @@ footer {
 .image {
     width: 130px;
     height: 150px;
+}
+
+footer {
+    height: 40px;
 }
 
 
