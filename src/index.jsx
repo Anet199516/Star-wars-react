@@ -6,7 +6,7 @@ import App from './App';
 
 const rootElement = document.getElementById('root');
 ReactDOM.render(
-  <BrowserRouter basename={process.env.PUBLIC_URL}>
+  <BrowserRouter>
     <App />
   </BrowserRouter>,
   rootElement,

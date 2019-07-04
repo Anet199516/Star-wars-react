@@ -1,11 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const peopleColumnConfig = {
+export const charactersColumnConfig = {
   checkbox: {
     title: '',
     render: () => (
       <input type="checkbox" />
+    ),
+  },
+  image: {
+    title: 'Picture',
+    render: person => (
+      <img className="image" src={`https://starwars-visualguide.com/assets/img/characters/${person.id}.jpg`} alt="Not found" />
     ),
   },
   name: {
@@ -13,7 +19,7 @@ export const peopleColumnConfig = {
     isSortable: true,
     isSearchable: true,
     render: person => (
-      <Link to={`/people/${person.name}`}>{person.name}</Link>
+      <Link to={`/people/${person.id}`}>{person.name}</Link>
     ),
   },
   mass: {
@@ -51,12 +57,18 @@ export const filmsColumnConfig = {
       <input type="checkbox" />
     ),
   },
+  image: {
+    title: 'Picture',
+    render: film => (
+      <img className="image" src={`https://starwars-visualguide.com/assets/img/films/${film.id}.jpg`} alt="Not found" />
+    ),
+  },
   title: {
     title: 'Title',
     isSortable: true,
     isSearchable: true,
     render: film => (
-      <Link to={`/films/${film.title}`}>{film.title}</Link>
+      <Link to={`/films/${film.id}`}>{film.title}</Link>
     ),
   },
   episode_id: {
@@ -87,12 +99,18 @@ export const planetsColumnConfig = {
       <input type="checkbox" />
     ),
   },
+  image: {
+    title: 'Picture',
+    render: planet => (
+      <img className="image" src={`https://starwars-visualguide.com/assets/img/planets/${planet.id}.jpg`} alt="Not found" />
+    ),
+  },
   name: {
     title: 'Name',
     isSortable: true,
     isSearchable: true,
     render: planet => (
-      <Link to={`/planets/${planet.name}`}>{planet.name}</Link>
+      <Link to={`/planets/${planet.id}`}>{planet.name}</Link>
     ),
   },
   diameter: {
@@ -131,12 +149,18 @@ export const speciesColumnConfig = {
       <input type="checkbox" />
     ),
   },
+  image: {
+    title: 'Picture',
+    render: species => (
+      <img className="image" src={`https://starwars-visualguide.com/assets/img/species/${species.id}.jpg`} alt="Not found" />
+    ),
+  },
   name: {
     title: 'Name',
     isSortable: true,
     isSearchable: true,
     render: spacies => (
-      <Link to={`/spacies/${spacies.name}`}>{spacies.name}</Link>
+      <Link to={`/species/${spacies.id}`}>{spacies.name}</Link>
     ),
   },
   classification: {
@@ -178,12 +202,18 @@ export const starshipsColumnConfig = {
       <input type="checkbox" />
     ),
   },
+  image: {
+    title: 'Picture',
+    render: starship => (
+      <img className="image" src={`https://starwars-visualguide.com/assets/img/starships/${starship.id}.jpg`} alt="Not found" />
+    ),
+  },
   name: {
     title: 'Name',
     isSortable: true,
     isSearchable: true,
     render: starship => (
-      <Link to={`/starships/${starship.name}`}>{starship.name}</Link>
+      <Link to={`/starships/${starship.id}`}>{starship.name}</Link>
     ),
   },
   model: {
@@ -191,6 +221,57 @@ export const starshipsColumnConfig = {
     isSearchable: true,
   },
   starship_class: {
+    title: 'Starship Class',
+    isSortable: true,
+  },
+  manufacturer: {
+    title: 'Manufacturer',
+    isSortable: true,
+  },
+  cost_in_credits: {
+    title: 'Cost in credits',
+    isSortable: true,
+  },
+  length: {
+    title: 'Length',
+    isSortable: true,
+  },
+  passengers: {
+    title: 'Passengers',
+    isSearchable: true,
+  },
+  max_atmosphering_speed: {
+    title: 'Max atmosphering speed',
+    isSearchable: true,
+  },
+};
+
+export const vehiclesColumnConfig = {
+  checkbox: {
+    title: '',
+    render: () => (
+      <input type="checkbox" />
+    ),
+  },
+  image: {
+    title: 'Picture',
+    render: vehicle => (
+      <img className="image" src={`https://starwars-visualguide.com/assets/img/vehicles/${vehicle.id}.jpg`} alt="Not found" />
+    ),
+  },
+  name: {
+    title: 'Name',
+    isSortable: true,
+    isSearchable: true,
+    render: vehicle => (
+      <Link to={`/vehicles/${vehicle.id}`}>{vehicle.name}</Link>
+    ),
+  },
+  model: {
+    title: 'Model',
+    isSearchable: true,
+  },
+  vehicle_class: {
     title: 'Starship Class',
     isSortable: true,
   },

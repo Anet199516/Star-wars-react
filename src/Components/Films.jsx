@@ -1,6 +1,5 @@
 import React from 'react';
-import { getAllFilms } from '../service/AllComponents';
-import Pagination from '../Common/Pagination';
+import { getAllComponents } from '../service/dataFromServer';
 import { filmsColumnConfig } from '../Common/Config';
 import DataTable from '../Common/DataTable';
 
@@ -15,7 +14,7 @@ class Films extends React.Component {
   }
 
   async componentDidMount() {
-    const { results: films } = await getAllFilms();
+    const { results: films } = await getAllComponents(/films/);
 
     this.setState({
       films,
@@ -27,7 +26,7 @@ class Films extends React.Component {
     const { films, isLoaded, config } = this.state;
     return (
       <div>
-        <h1 className="title-component">Films Page</h1>
+        <h1 className="title-component">Films</h1>
         { isLoaded ? (
           <DataTable
             className="data-table"

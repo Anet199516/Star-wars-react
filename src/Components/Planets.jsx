@@ -1,5 +1,5 @@
 import React from 'react';
-import { getAllPlanets } from '../service/AllComponents';
+import { getAllComponents } from '../service/dataFromServer';
 import Pagination from '../Common/Pagination';
 import { planetsColumnConfig } from '../Common/Config';
 import DataTable from '../Common/DataTable';
@@ -10,14 +10,37 @@ class Planets extends React.Component {
     this.state = {
       isLoaded: false,
       planets: [],
-      page: 1,
+      page: 0,
       count: 0,
       config: planetsColumnConfig,
     };
   }
 
-  async componentDidMount() {
-    const { count, results: planets } = await getAllPlanets();
+  componentDidMount() {
+    this.updatePageFromURL();
+  }
+
+  componentDidUpdate() {
+    this.updatePageFromURL();
+  }
+
+  updatePageFromURL() {
+    const { location } = this.props;
+    const urlParams = new URLSearchParams(location.search);
+    const page = +urlParams.get('page') || 1;
+
+    if (page === this.state.page) return;
+
+    this.setState({ page }, this.loadPeople);
+  }
+
+  async loadPeople() {
+    const { page } = this.state;
+    const urlParams = new URLSearchParams();
+
+    urlParams.set('page', page);
+
+    const { count, results: planets } = await getAllComponents(`/planets?${urlParams.toString()}`);
 
     this.setState({
       planets,
@@ -30,7 +53,7 @@ class Planets extends React.Component {
     const { planets, isLoaded, count, page, config } = this.state;
     return (
       <div>
-        <h1 className="title-component">Planets Page</h1>
+        <h1 className="title-component">Planets</h1>
         { isLoaded ? (
           <>
             <Pagination count={count} page={page} />

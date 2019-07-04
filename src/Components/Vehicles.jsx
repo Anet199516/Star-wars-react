@@ -1,18 +1,18 @@
 import React from 'react';
 import { getAllComponents } from '../service/dataFromServer';
 import Pagination from '../Common/Pagination';
-import { speciesColumnConfig } from '../Common/Config';
+import { vehiclesColumnConfig } from '../Common/Config';
 import DataTable from '../Common/DataTable';
 
-class Species extends React.Component {
+class Vehicles extends React.Component {
   constructor() {
     super();
     this.state = {
       isLoaded: false,
-      species: [],
+      vehicles: [],
       page: 0,
       count: 0,
-      config: speciesColumnConfig,
+      config: vehiclesColumnConfig,
     };
   }
 
@@ -40,26 +40,26 @@ class Species extends React.Component {
 
     urlParams.set('page', page);
 
-    const { count, results: species } = await getAllComponents(`/species?${urlParams.toString()}`);
+    const { count, results: vehicles } = await getAllComponents(`/vehicles?${urlParams.toString()}`);
 
     this.setState({
-      species,
+      vehicles,
       count,
       isLoaded: true,
     });
   }
 
   render() {
-    const { species, isLoaded, count, page, config } = this.state;
+    const { vehicles, isLoaded, count, page, config } = this.state;
     return (
       <div>
-        <h1 className="title-component">Species</h1>
+        <h1 className="title-component">Vehicles</h1>
         { isLoaded ? (
           <>
             <Pagination count={count} page={page} />
             <DataTable
               className="data-table"
-              items={species}
+              items={vehicles}
               config={config}
             />
           </>
@@ -69,4 +69,4 @@ class Species extends React.Component {
   }
 }
 
-export default Species;
+export default Vehicles;

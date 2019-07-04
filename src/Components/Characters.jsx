@@ -1,18 +1,18 @@
 import React from 'react';
 import { getAllComponents } from '../service/dataFromServer';
 import Pagination from '../Common/Pagination';
-import { speciesColumnConfig } from '../Common/Config';
+import { charactersColumnConfig } from '../Common/Config';
 import DataTable from '../Common/DataTable';
 
-class Species extends React.Component {
+class Characters extends React.Component {
   constructor() {
     super();
     this.state = {
       isLoaded: false,
-      species: [],
+      characters: [],
       page: 0,
       count: 0,
-      config: speciesColumnConfig,
+      config: charactersColumnConfig,
     };
   }
 
@@ -40,26 +40,26 @@ class Species extends React.Component {
 
     urlParams.set('page', page);
 
-    const { count, results: species } = await getAllComponents(`/species?${urlParams.toString()}`);
+    const { count, results: characters } = await getAllComponents(`/people?${urlParams.toString()}`);
 
     this.setState({
-      species,
+      characters,
       count,
       isLoaded: true,
     });
   }
 
   render() {
-    const { species, isLoaded, count, page, config } = this.state;
+    const { characters, isLoaded, count, page, config } = this.state;
     return (
       <div>
-        <h1 className="title-component">Species</h1>
+        <h1 className="title-component">Characters</h1>
         { isLoaded ? (
           <>
             <Pagination count={count} page={page} />
             <DataTable
               className="data-table"
-              items={species}
+              items={characters}
               config={config}
             />
           </>
@@ -69,4 +69,4 @@ class Species extends React.Component {
   }
 }
 
-export default Species;
+export default Characters;

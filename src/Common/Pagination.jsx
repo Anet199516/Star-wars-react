@@ -23,16 +23,17 @@ const Pagination = ({
   return (
     <ul className="pagination">
       {pages.map(page => (
-        <Link
-          className="page-item"
-          key={page}
-          to={{
-            pathname: location.pathname,
-            search: location.search,
-          }}
-        >
-          {page}
-        </Link>
+        <li className="page-item" key={page}>
+          <Link
+            className="page-link"
+            to={{
+              pathname: location.pathname,
+              search: getSearchWithPage(page),
+            }}
+          >
+            {page}
+          </Link>
+        </li>
       ))}
     </ul>
   );
